@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import { useNavigate } from "react-router";
-import { Context } from "../../contexts/app-context";
 import "./styles.css";
 
 interface HeaderProps {

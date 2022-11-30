@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import CountryDetail from "./pages/Country";
+import CountryDetail from "./pages/CountryDetails";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
