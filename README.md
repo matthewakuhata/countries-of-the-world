@@ -26,10 +26,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/matthewakuhata/countries-of-the-world">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
 <h3 align="center">Countries of the World</h3>
 
   <p align="center">
@@ -153,7 +149,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-shield]: https://img.shields.io/github/issues/matthewakuhata/countries-of-the-world.svg?style=for-the-badge
 [issues-url]: https://github.com/matthewakuhata/countries-of-the-world/issues
 [license-shield]: https://img.shields.io/github/license/matthewakuhata/countries-of-the-world.svg?style=for-the-badge
-[license-url]: https://github.com/matthewakuhata/countries-of-the-world/blob/master/LICENSE.txt
+[license-url]: https://github.com/matthewakuhata/countries-of-the-world/blob/main/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/yhq5ihanseyinzwblaw1.jpg
