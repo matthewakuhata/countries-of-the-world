@@ -5,7 +5,7 @@ import "./App.css";
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">This is open sans</header>
     </div>
   );
 };
