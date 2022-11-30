@@ -1,5 +1,55 @@
-.app {
-  text-align: center;
+.app--dark {
+  height: 100%;
+  min-height: 100vh;
+  color: var(--dark-text);
+  background-color: var(--dark-background);
+  transition: all 0.5s;
+  --loading-color: var(--dark-text);
+}
+
+.app--dark input {
+  color: var(--dark-text);
+  background-color: var(--dark-background);
+  transition: all 0.5s;
+}
+
+.app--dark select {
+  color: var(--dark-text);
+  background-color: var(--dark-background);
+  transition: all 0.5s;
+}
+
+.app--dark button {
+  color: var(--dark-text);
+  background-color: var(--dark-element);
+  transition: all 0.5s;
+}
+
+.app--light {
+  height: 100%;
+  min-height: 100vh;
+  color: var(--light-text);
+  background-color: var(--light-background);
+  transition: all 0.5s;
+  --loading-color: var(--light-text);
+}
+
+.app--light input {
+  color: var(--light-text);
+  background-color: var(--light-background);
+  transition: all 0.5s;
+}
+
+.app--light select {
+  color: var(--light-text);
+  background-color: var(--light-background);
+  transition: all 0.5s;
+}
+
+.app--light button {
+  color: var(--light-text);
+  background-color: var(--light-element);
+  transition: all 0.5s;
 }
 
 .App-header {
