@@ -4,7 +4,7 @@ import "./App.css";
 
 const App: React.FC = () => {
   return (
-    <div id={"abc"} className="App showme">
+    <div className="App">
       <header className="App-header"></header>
     </div>
   );
