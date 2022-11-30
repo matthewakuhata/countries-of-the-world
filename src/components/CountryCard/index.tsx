@@ -1,5 +1,6 @@
 import React from "react";
 import { Country } from "../../hooks/useCountriesHook";
+import { formatNumber } from "../../utils/formatNumber";
 
 import "./styles.css";
 interface CountryCardProps {
@@ -13,7 +14,7 @@ const CountryCard: React.FC<CountryCardProps> = ({ country, onClick }) => {
       <img src={country.flags.svg} alt={`${country.name.common} Flag`} />
       <h3>{country.name.common}</h3>
       <p>
-        <b>Population:</b> {country.population}
+        <b>Population:</b> {formatNumber(country.population)}
       </p>
       <p>
         <b>Region:</b> {country.region}

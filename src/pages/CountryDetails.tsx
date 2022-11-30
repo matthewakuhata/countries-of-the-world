@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import LoadingBar from "../components/LoadingBar/LoadingBar";
 import { Country } from "../hooks/useCountriesHook";
+import { formatNumber } from "../utils/formatNumber";
 
 import "./CountryDetail.css";
 const CountryDetail = () => {
@@ -46,7 +47,7 @@ const CountryDetail = () => {
               <b>Native Name:</b> {countryData.name.official}
             </p>
             <p>
-              <b>Population:</b> {countryData.population}
+              <b>Population:</b> {formatNumber(countryData.population)}
             </p>
             <p>
               <b>Region:</b> {countryData.region}

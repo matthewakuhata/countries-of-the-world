@@ -8,13 +8,11 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ mode, onChangeMode }) => {
   const navigate = useNavigate();
+  const nextMode = mode === "Light" ? "Dark" : "Light";
 
   const handleUpdateMode = () => {
-    if (mode === "Light") {
-      onChangeMode("Dark");
-    } else {
-      onChangeMode("Light");
-    }
+    onChangeMode(nextMode);
+    localStorage.setItem("mode", nextMode);
   };
 
   return (
@@ -24,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ mode, onChangeMode }) => {
         <span className="icon">
           <i className="fas fa-circle-half-stroke" />
         </span>
-        {mode === "Light" ? "Dark" : "Light"} Mode
+        {nextMode}
       </button>
     </header>
   );

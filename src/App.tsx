@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -8,8 +8,10 @@ import CountryDetail from "./pages/CountryDetails";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
 
+type Mode = "Light" | "Dark";
 const App: React.FC = () => {
-  const [mode, setMode] = useState<"Light" | "Dark">("Light");
+  const storedMode = (localStorage.getItem("mode") as Mode) || "Light";
+  const [mode, setMode] = useState<Mode>(storedMode);
 
   return (
     <BrowserRouter>
