@@ -30,19 +30,14 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Countries of the World</h3>
 
   <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/matthewakuhata/countries-of-the-world/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/matthewakuhata/countries-of-the-world/issues">Request Feature</a>
   </p>
 </div>
 
@@ -73,7 +68,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/yhq5ihanseyinzwblaw1.jpg)
 
-Intergrating with the [![REST Countries API]](https://restcountries.com/) to pull country data and display. Using as React and Typescript.
+Intergrated with the [REST Countries API](https://restcountries.com/) to pull country data and display. Using as React and Typescript.
 
 Features include:
 
@@ -114,6 +109,10 @@ Features include:
    ```sh
    npm install
    ```
+3. Start server
+   ```sh
+   npm run start
+   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -139,16 +138,6 @@ Don't forget to give the project a star! Thanks again!
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-- []()
-- []()
-- []()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
