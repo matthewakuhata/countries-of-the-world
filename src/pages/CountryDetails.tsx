@@ -10,18 +10,47 @@ const CountryDetail = () => {
   const { cioc } = useParams();
   const navigate = useNavigate();
   const [countryData, setCountryData] = useState<Country>();
+  const [borderCountryNames, setBorderCountryNames] = useState<{
+    [key: string]: string;
+  }>({});
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
       setLoading(true);
-      const data = await fetch(`https://restcountries.com/v3.1/alpha/${cioc}`, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      }).then((res) => res.json() as Promise<Country[]>);
+      try {
+        const [data] = await fetch(
+          `https://restcountries.com/v3.1/alpha/${cioc}`,
+          {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+          }
+        ).then((res) => res.json() as Promise<Country[]>);
 
-      setCountryData(data[0]);
-      setLoading(false);
+        if (data.borders?.length) {
+          const borderCountries = await fetch(
+            `https://restcountries.com/v3.1/alpha?codes=${data.borders.join(
+              ","
+            )}&fields=name,cca3`,
+            {
+              method: "GET",
+              headers: { "Content-Type": "application/json" },
+            }
+          ).then((res) => res.json() as Promise<Country[]>);
+
+          const borderMap = borderCountries.reduce(
+            (obj, country) => ({ ...obj, [country.cca3]: country.name.common }),
+            {}
+          );
+          setBorderCountryNames(borderMap);
+        }
+
+        setCountryData(data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
     };
     getData();
   }, [cioc]);
@@ -75,12 +104,13 @@ const CountryDetail = () => {
           {countryData.borders?.length && (
             <div className="country-detail__borders">
               <b>Border Countries:</b>{" "}
-              {countryData.borders.map((border) => (
+              {Object.keys(borderCountryNames).map((cca3) => (
                 <button
-                  onClick={() => navigate(`/country/${border}`)}
+                  key={cca3}
+                  onClick={() => navigate(`/country/${cca3}`)}
                   className="country-detail__button is-small"
                 >
-                  {border}
+                  {borderCountryNames[cca3]}
                 </button>
               ))}
             </div>

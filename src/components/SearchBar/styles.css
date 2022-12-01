@@ -11,6 +11,7 @@
 }
 
 .search-bar input {
+  width: 300px;
   padding: 10px 0 10px 40px;
   border: 0;
   border-radius: 5px;
