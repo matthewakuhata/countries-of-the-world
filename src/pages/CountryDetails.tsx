@@ -1,59 +1,16 @@
-import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+
 import LoadingBar from "../components/LoadingBar/LoadingBar";
-import { Country } from "../hooks/useCountriesHook";
+import { useCountryDetails } from "../hooks/useCountryDetails";
 import { formatNumber } from "../utils/formatNumber";
 
 import "./CountryDetail.css";
+
 const CountryDetail = () => {
   const { cioc } = useParams();
   const navigate = useNavigate();
-  const [countryData, setCountryData] = useState<Country>();
-  const [borderCountryNames, setBorderCountryNames] = useState<{
-    [key: string]: string;
-  }>({});
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const getData = async () => {
-      setLoading(true);
-      try {
-        const [data] = await fetch(
-          `https://restcountries.com/v3.1/alpha/${cioc}`,
-          {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-          }
-        ).then((res) => res.json() as Promise<Country[]>);
-
-        if (data.borders?.length) {
-          const borderCountries = await fetch(
-            `https://restcountries.com/v3.1/alpha?codes=${data.borders.join(
-              ","
-            )}&fields=name,cca3`,
-            {
-              method: "GET",
-              headers: { "Content-Type": "application/json" },
-            }
-          ).then((res) => res.json() as Promise<Country[]>);
-
-          const borderMap = borderCountries.reduce(
-            (obj, country) => ({ ...obj, [country.cca3]: country.name.common }),
-            {}
-          );
-          setBorderCountryNames(borderMap);
-        }
-
-        setCountryData(data);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getData();
-  }, [cioc]);
+  const { loading, countryData, borderCountryNames } = useCountryDetails(cioc);
 
   if (loading) return <LoadingBar />;
 
